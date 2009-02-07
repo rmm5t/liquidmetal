@@ -2,6 +2,8 @@
 
 A mimetic poly-alloy of the Quicksilver scoring algorithm, essentially LiquidMetal. `</Schwarzenegger Voice>`
 
+Flex matching short abbreviations against longer strings is a boon in productivity for typists.  Applications like Quicksilver, LaunchBar, and Launchy have made this method of keyboard entry a popular one.  It's time to bring this same functionality to web controls.  LiquidMetal makes scoring long strings against abbreviations easy.
+
 ## Usage
 
 Include the library:
@@ -35,6 +37,10 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 * More tests
 * Some abbreviations are capable of yielding multiple scores.  Return the highest score instead of just the first.
 * See if it's possible to tune the performance further.
+
+## Author
+
+[Ryan McGeary](http://ryan.mcgeary.org) ([@rmm5t](http://twitter.com/rmm5t))
 
 ## Other
 
