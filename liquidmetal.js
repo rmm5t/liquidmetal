@@ -26,7 +26,6 @@ var LiquidMetal = function() {
       if (abbreviation.length > string.length) return SCORE_NO_MATCH;
 
       var scores = this.buildScoreArray(string, abbreviation);
-      // console.log(string + " ~ " + abbreviation + " : " + scores);
 
       var sum = 0.0;
       for (var i in scores) {
