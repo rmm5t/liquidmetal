@@ -32,6 +32,8 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 
 ## Why?
 
+* To satisfy my own requirements for the
+  [jquery.flexselect](http://rmm5t.github.com/jquery-flexselect) plugin
 * The Quicksilver algorithm doesn't give proper weight to abbreviations that
   match the first character of the scored string.
 * The Quicksilver algorithm is extremely slow for certain length
@@ -41,11 +43,11 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
   other conditions.
 * The javascript version of the Quicksilver algorithm is case sensitive and
   doesn't give added weight to camel case strings.
-* To satisfy my own requirements for an upcoming jquery.flexselect plugin
 
 ## Todo
 
 * More tests
+* Consider tweaking the scores for "trailing" characters
 * Some abbreviations are capable of yielding multiple scores.  Return the
   highest score instead of just the first.
 * See if it's possible to tune the performance further.
