@@ -37,7 +37,7 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 * The Quicksilver algorithm doesn't give proper weight to abbreviations that
   match the first character of the scored string.
 * The Quicksilver algorithm is extremely slow for certain length
-  string/abbreviation combinations because of it's use of recursion.  While
+  string/abbreviation combinations because of its use of recursion.  While
   slightly slower for shorter length string/abbreviation combinations,
   LiquidMetal outperforms the Quicksilver algorithm by orders of magnitude under
   other conditions.
