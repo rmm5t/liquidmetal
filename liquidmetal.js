@@ -22,10 +22,13 @@ var LiquidMetal = function() {
   return {
     score: function(string, abbreviation) {
       // Short circuits
-      if (abbreviation.length == 0) return SCORE_TRAILING;
+      if (abbreviation.length === 0) return SCORE_TRAILING;
       if (abbreviation.length > string.length) return SCORE_NO_MATCH;
 
       var scores = this.buildScoreArray(string, abbreviation);
+
+      // complete miss:
+      if ( scores === false )  return 0;
 
       var sum = 0.0;
       for (var i = 0; i < scores.length; i++) {
@@ -45,8 +48,9 @@ var LiquidMetal = function() {
       for (var i = 0; i < chars.length; i++) {
         var c = chars[i];
         var index = lower.indexOf(c, lastIndex+1);
-        if (index < 0) return fillArray(scores, SCORE_NO_MATCH);
-        if (index == 0) started = true;
+
+        if (index === -1) return false; // signal no match
+        if (index === 0) started = true;
 
         if (isNewWord(string, index)) {
           scores[index-1] = 1;
