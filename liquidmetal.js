@@ -68,7 +68,7 @@ var LiquidMetal = (function() {
       }
 
       var trailingScore = started ? SCORE_TRAILING_BUT_STARTED : SCORE_TRAILING;
-      fillArray(scores, trailingScore, lastIndex+1);
+      fillArray(scores, trailingScore, lastIndex+1, scores.length);
       return scores;
     }
   };
@@ -84,8 +84,6 @@ var LiquidMetal = (function() {
   }
 
   function fillArray(array, value, from, to) {
-    from = Math.max(from || 0, 0);
-    to = Math.min(to || array.length, array.length);
     for (var i = from; i < to; i++) { array[i] = value; }
     return array;
   }
