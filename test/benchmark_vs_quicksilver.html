@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>liquidmetal performance tests</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../liquidmetal.js" type="text/javascript"></script>
+    <script src="quicksilver.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        schools = [
+          "Massachusetts Institute of Technology",
+          "Harvard University",
+          "University of California, Berkeley",
+          "University of Michigan",
+          "University of Illinois at Urbana-Champaign",
+          "Purdue University",
+          "University of Wisconsin-Madison",
+          "Yale University",
+          "Indiana University - System",
+          "University of California System",
+          "Stanford University",
+          "Penn State University",
+          "The University of Texas at Austin",
+          "University of Washington",
+          "University of Pennsylvania",
+          "Cornell University",
+          "Columbia University in the City of New York",
+          "University of California, Los Angeles",
+          "University of Minnesota",
+          "New York University",
+          "University of Florida",
+          "University of Virginia",
+          "Carnegie Mellon University",
+          "Rutgers University - New Brunswick",
+          "University of Toronto",
+          "University of Maryland",
+          "The Ohio State University",
+          "Virginia Polytechnic Institute and State University",
+          "University of Arizona",
+          "University of Southern California",
+          "Texas A&M University",
+          "Princeton University",
+          "University of North Carolina at Chapel Hill",
+          "Duke University",
+          "North Carolina State University",
+          "Michigan State University",
+          "University of California, San Diego",
+          "University of Chicago",
+          "The University of British Columbia",
+          "University of California, Irvine",
+          "University of California, Davis",
+          "Johns Hopkins University",
+          "Arizona State University",
+          "University of Georgia",
+          "Boston University",
+          "University of Colorado at Boulder",
+          "University of Waterloo",
+          "Northwestern University",
+          "University of Pittsburgh",
+          "York University",
+          "Iowa State University of Science and Technology",
+          "Georgia Institute of Technology",
+          "University of Iowa",
+          "McGill University",
+          "University of California, Santa Barbara",
+          "University of Alberta",
+          "University of Oregon",
+          "University of Delaware",
+          "Université Laval",
+          "California Institute of Technology",
+          "Oregon State University",
+          "University of California, Riverside",
+          "University of Illinois at Chicago",
+          "University of Nebraska - Lincoln",
+          "Drexel University",
+          "Simon Fraser University",
+          "Rice University",
+          "Washington University in St. Louis",
+          "Virginia Commonwealth University",
+          "Stony Brook University, State University of New York",
+          "Brown University",
+          "San Diego State University",
+          "Georgetown University",
+          "Université de Montréal",
+          "University of Rochester",
+          "Dartmouth College",
+          "University of Calgary",
+          "University of Victoria",
+          "Carleton University",
+          "Vanderbilt University",
+          "Emory University",
+          "University of Notre Dame",
+          "Université du Québec à Montréal",
+          "The University of Western Ontario",
+          "University of California, Santa Cruz",
+          "University of California, San Francisco",
+          "Auburn University",
+          "McMaster University",
+          "University of Wisconsin-Milwaukee",
+          "Portland State University",
+          "Queen's University",
+          "University of Guelph",
+          "SUNY at Binghamton",
+          "Utah State University",
+          "The University of Texas at Arlington",
+          "Illinois Institute of Technology",
+          "Concordia University",
+          "Indiana University - Purdue University Indianapolis",
+          "California State University, Sacramento",
+          "New Jersey Institute of Technology"
+        ];
+        var abbreviation = "University of Minn"
+
+        var start = (new Date).getTime();
+        for (var i in schools) {
+          LiquidMetal.score(schools[i], abbreviation)
+        }
+        var diff = (new Date).getTime() - start;
+        $("body").append($("<div></div>").text("LiquidMetal: " + diff + "ms"));
+
+        var start = (new Date).getTime();
+        for (var i in schools) {
+          schools[i].score(abbreviation)
+        }
+        var diff = (new Date).getTime() - start;
+        $("body").append($("<div></div>").text("Quicksilver: " + diff + "ms"));
+      });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
