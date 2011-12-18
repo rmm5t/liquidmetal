@@ -38,7 +38,7 @@ var LiquidMetal = function() {
     buildScoreArray: function(string, abbreviation) {
       var scores = new Array(string.length);
       var lower = string.toLowerCase();
-      var chars = abbreviation.toLowerCase().split("");
+      var chars = abbreviation.toLowerCase();
 
       var lastIndex = -1;
       var started = false;
