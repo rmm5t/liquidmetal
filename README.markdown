@@ -4,10 +4,12 @@ A mimetic poly-alloy of the Quicksilver scoring algorithm, essentially
 LiquidMetal. `</Schwarzenegger Voice>`
 
 Flex matching short abbreviations against longer strings is a boon in
-productivity for typists.  Applications like Quicksilver, LaunchBar, and Launchy
-have made this method of keyboard entry a popular one.  It's time to bring this
-same functionality to web controls.  LiquidMetal makes scoring long strings
-against abbreviations easy.
+productivity for typists.  Applications like
+[Quicksilver](http://www.qsapp.com/), [Alfred](http://www.alfredapp.com/),
+[LaunchBar](http://www.obdev.at/products/launchbar/index.html), and
+[Launchy](http://www.launchy.net/) have made this method of keyboard entry a
+popular one.  It's time to bring this same functionality to web controls.
+LiquidMetal makes scoring long strings against abbreviations easy.
 
 ## Usage
 
@@ -41,8 +43,10 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
   slightly slower for shorter length string/abbreviation combinations,
   LiquidMetal outperforms the Quicksilver algorithm by orders of magnitude under
   other conditions.
-* The javascript version of the Quicksilver algorithm is case sensitive and
-  doesn't give added weight to camel case strings.
+* The javascript version of the Quicksilver algorithm (Quicksilver.js) is case
+  sensitive and doesn't give added weight to camel case strings; whereas,
+  LiquidMetal is case insensitive and does give added weight to uppercase
+  letters in camel case strings.
 
 ## Todo
 
@@ -61,4 +65,3 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 Copyright (c) 2009, Ryan McGeary (ryanonjavascript -[at]- mcgeary [*dot*] org)
-
