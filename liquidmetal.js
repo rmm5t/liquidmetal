@@ -1,5 +1,5 @@
 /**
- * LiquidMetal, version: 1.0 (2011-12-17)
+ * LiquidMetal, version: 1.1 (2012-03-01)
  *
  * A mimetic poly-alloy of Quicksilver's scoring algorithm, essentially
  * LiquidMetal.
@@ -18,7 +18,7 @@ var LiquidMetal = (function() {
   var SCORE_TRAILING = 0.8;
   var SCORE_TRAILING_BUT_STARTED = 0.9;
   var SCORE_BUFFER = 0.85;
-  var WORD_SEPARATORS = [" ", "\t", "_", "-"]
+  var WORD_SEPARATORS = [" ", "\t", "_", "-"];
 
   return {
     score: function(string, abbreviation) {
@@ -81,7 +81,7 @@ var LiquidMetal = (function() {
 
    function isNewWord(string, index) {
     var c = string.charAt(index-1);
-    return (WORD_SEPARATORS.indexOf(c) != -1)
+    return (WORD_SEPARATORS.indexOf(c) != -1);
   }
 
   function fillArray(array, value, from, to) {
