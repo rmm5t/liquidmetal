@@ -53,6 +53,8 @@ $(document).ready(function() {
   shouldScore([t,t,t,t,t,t,t], "Foo Bar", "");
   shouldScore([m,m,m,s,s,s,s], "Foo Bar", "foo");
   shouldScore([m,b,b,m,m,s,s], "Foo Bar", "fb");
+  shouldScore([m,b,b,m,m,s,s], "Foo-Bar", "fb");
+  shouldScore([m,b,b,m,m,s,s], "Foo_Bar", "fb");
   shouldScore([b,b,b,m,m,t,t], "Foo Bar", "b");
   shouldScore([n,m,m,n,n,m,m], "Foo Bar", "ooar");
   shouldScore([n,n,n,n,n,n,n], "Foo Bar", "bab");
