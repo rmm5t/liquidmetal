@@ -18,6 +18,7 @@ var LiquidMetal = (function() {
   var SCORE_TRAILING = 0.8;
   var SCORE_TRAILING_BUT_STARTED = 0.9;
   var SCORE_BUFFER = 0.85;
+  var WORD_SEPARATORS = [" ", "\t", "_", "-"]
 
   return {
     score: function(string, abbreviation) {
@@ -80,7 +81,7 @@ var LiquidMetal = (function() {
 
    function isNewWord(string, index) {
     var c = string.charAt(index-1);
-    return (c == " " || c == "\t");
+    return (WORD_SEPARATORS.indexOf(c) != -1)
   }
 
   function fillArray(array, value, from, to) {
