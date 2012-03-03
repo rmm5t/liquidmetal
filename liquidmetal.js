@@ -21,37 +21,37 @@ var LiquidMetal = (function() {
   var WORD_SEPARATORS = [" ", "\t", "_", "-"];
 
   return {
-    score: function(string, abbreviation) {
+    score: function(string, abbrev) {
       // Short circuits
-      if (abbreviation.length === 0) return SCORE_TRAILING;
-      if (abbreviation.length > string.length) return SCORE_NO_MATCH;
+      if (abbrev.length === 0) return SCORE_TRAILING;
+      if (abbrev.length > string.length) return SCORE_NO_MATCH;
 
-      var scores = this.buildScoreArray(string, abbreviation);
+      var scores = this.buildScoreArray(string, abbrev);
 
       // complete miss:
-      if ( scores === false )  return 0;
+      if (scores === false) return 0;
 
+      // sum per-character score for overall score, normalize by string length
+      // so perfect match score = 1
       var sum = 0.0;
-      for (var i = 0; i < scores.length; i++) {
-        sum += scores[i];
-      }
-
+      for (var i = 0; i < scores.length; i++) { sum += scores[i]; }
       return (sum / scores.length);
     },
 
-    buildScoreArray: function(string, abbreviation) {
+    buildScoreArray: function(string, abbrev) {
       var scores = new Array(string.length);
-      var lower = string.toLowerCase();
-      var chars = abbreviation.toLowerCase();
+      var search = string.toLowerCase();
+      abbrev = abbrev.toLowerCase();
 
       var lastIndex = -1;
       var started = false;
-      for (var i = 0; i < chars.length; i++) {
-        var c = chars[i];
-        var index = lower.indexOf(c, lastIndex+1);
+      // score each match according to context
+      for (var i = 0; i < abbrev.length; i++) {
+        var c = abbrev[i];
+        var index = search.indexOf(c, lastIndex+1);
 
         if (index === -1) return false; // signal no match
-        if (index === 0) started = true;
+        if (index === 0) started = true; // flag abbreviation at start of string
 
         if (isNewWord(string, index)) {
           scores[index-1] = 1;
@@ -68,6 +68,7 @@ var LiquidMetal = (function() {
         lastIndex = index;
       }
 
+      // score remaining string as trailing characters
       var trailingScore = started ? SCORE_TRAILING_BUT_STARTED : SCORE_TRAILING;
       fillArray(scores, trailingScore, lastIndex+1, scores.length);
       return scores;
