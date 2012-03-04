@@ -58,4 +58,5 @@ $(document).ready(function() {
   shouldScore([b,b,b,m,m,t,t], "Foo Bar", "b");
   shouldScore([n,m,m,n,n,m,m], "Foo Bar", "ooar");
   shouldScore([n,n,n,n,n,n,n], "Foo Bar", "bab");
+  shouldScore([b,b,b,b,b,m,m,b,b,m,m,t,t,t],  "gnu's Not Unix",  "nu");
 });
