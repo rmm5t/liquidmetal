@@ -7,7 +7,7 @@ $(document).ready(function() {
     var expectedScore = Math.round(sum / charScores.length * 1000) / 1000;
 
     var score = LiquidMetal.score(string, abbreviation);
-    var scoreArray = LiquidMetal.buildScoreArray(string, abbreviation);
+    var scoreArray = LiquidMetal.lastScoreArray;
     var roundedScore = Math.round(score*1000)/1000;
 
     var pass = (expectedScore == roundedScore);

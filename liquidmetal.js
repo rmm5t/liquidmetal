@@ -21,6 +21,9 @@ var LiquidMetal = (function() {
   var WORD_SEPARATORS = [" ", "\t", "_", "-"];
 
   return {
+    lastScore: null,
+    lastScoreArray: null,
+
     score: function(string, abbrev) {
       // Short circuits
       if (abbrev.length === 0) return SCORE_TRAILING;
@@ -35,7 +38,12 @@ var LiquidMetal = (function() {
       // so perfect match score = 1
       var sum = 0.0;
       for (var i = 0; i < scores.length; i++) { sum += scores[i]; }
-      return (sum / scores.length);
+      var overall_score = sum / scores.length;
+
+      // record overall score & score array, return overall score
+      this.lastScore = overall_score;
+      this.lastScoreArray = scores;
+      return overall_score;
     },
 
     buildScoreArray: function(string, abbrev) {
