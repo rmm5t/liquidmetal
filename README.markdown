@@ -52,9 +52,10 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 
 * More tests
 * Consider tweaking the scores for "trailing" characters
-* Some abbreviations are capable of yielding multiple scores.  Return the
-  highest score instead of just the first.
-* See if it's possible to tune the performance further.
+* Improve implementation of highest score matching (LiquidMetal
+  currently returns the highest scoring match for an abbreviation,
+  but is inefficient)
+* See if it's possible to tune the performance further
 
 ## Author
 

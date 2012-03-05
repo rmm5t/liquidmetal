@@ -7,7 +7,7 @@ $(document).ready(function() {
     var expectedScore = Math.round(sum / charScores.length * 1000) / 1000;
 
     var score = LiquidMetal.score(string, abbreviation);
-    var scoreArray = LiquidMetal.buildScoreArray(string, abbreviation);
+    var scoreArray = LiquidMetal.lastScoreArray;
     var roundedScore = Math.round(score*1000)/1000;
 
     var pass = (expectedScore == roundedScore);
@@ -58,4 +58,5 @@ $(document).ready(function() {
   shouldScore([b,b,b,m,m,t,t], "Foo Bar", "b");
   shouldScore([n,m,m,n,n,m,m], "Foo Bar", "ooar");
   shouldScore([n,n,n,n,n,n,n], "Foo Bar", "bab");
+  shouldScore([b,b,b,b,b,m,m,b,b,m,m,t,t,t],  "gnu's Not Unix",  "nu");
 });
