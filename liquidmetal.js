@@ -1,5 +1,5 @@
 /**
- * LiquidMetal, version: 1.1 (2012-03-01)
+ * LiquidMetal, version: 1.2 (2012-03-28)
  *
  * A mimetic poly-alloy of Quicksilver's scoring algorithm, essentially
  * LiquidMetal.
