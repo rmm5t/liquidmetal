@@ -1,4 +1,4 @@
-function log(message) { if (console && console.log) console.log(message); }
+window.console == null && (window.console = { log: function() {} });
 
 $(document).ready(function() {
   function shouldScore(charScores, string, abbreviation) {
@@ -13,9 +13,9 @@ $(document).ready(function() {
     var pass = (expectedScore == roundedScore);
     var result = (pass) ? "pass" : "fail";
 
-    log(string + " ~ " + abbreviation + " : " + scoreArray);
+    console.log(string + " ~ " + abbreviation + " : " + scoreArray);
 
-    var blip = pass ? "✓" : "☠"
+    var blip = pass ? "✓" : "☠";
     if (!pass) {
       var message = "LiquidMetal.score('" + string + "', '" + abbreviation + "') should match " + expectedScore + " but was " + score;
       $("#errors").append($("<div></div>").addClass(result).text(message));
