@@ -36,7 +36,7 @@ var LiquidMetal = (function() {
       this._scoreAll(string, search, abbrev, -1, 0, [], allScores);
 
       // complete miss
-      if (!allScores.length) return 0;
+      if (allScores.length == 0) return 0;
 
       // sum per-character scores into overall scores,
       // selecting the maximum score
