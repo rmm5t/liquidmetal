@@ -35,7 +35,7 @@ All scores fall between a range of 0.0 (no match) to 1.0 (perfect match).
 ## Why?
 
 * To satisfy my own requirements for the
-  [jquery.flexselect](http://rmm5t.github.com/jquery-flexselect) plugin
+  [jquery.flexselect](http://rmm5t.github.io/jquery-flexselect) plugin
 * The Quicksilver algorithm doesn't give proper weight to abbreviations that
   match the first character of the scored string.
 * The Quicksilver algorithm is extremely slow for certain length
