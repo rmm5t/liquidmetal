@@ -11,6 +11,11 @@ productivity for typists.  Applications like
 popular one.  It's time to bring this same functionality to web controls.
 LiquidMetal makes scoring long strings against abbreviations easy.
 
+**If you like this project, please help by donating.**
+
+* Gittip: https://www.gittip.com/rmm5t/
+* Bitcoin: `1wzBnMjWVZfpiFMc5i2nzKT7sCBaZNfLK`
+
 ## Usage
 
 Include the library:
