@@ -1,0 +1,10 @@
+{
+  "name": "liquidmetal",
+  "version": "1.2.1",
+  "license": "MIT",
+  "main": "liquidmetal.js",
+  "ignore": [
+    "test",
+    "vendor"
+  ]
+}
