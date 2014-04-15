@@ -12,7 +12,7 @@
  *
  * Copyright (c) 2009-2012, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
  */
-var LiquidMetal = (function() {
+(function(global) {
   var SCORE_NO_MATCH = 0.0;
   var SCORE_MATCH = 1.0;
   var SCORE_TRAILING = 0.8;
@@ -20,7 +20,7 @@ var LiquidMetal = (function() {
   var SCORE_BUFFER = 0.85;
   var WORD_SEPARATORS = " \t_-";
 
-  return {
+  var LiquidMetal = {
     lastScore: null,
     lastScoreArray: null,
 
@@ -118,4 +118,18 @@ var LiquidMetal = (function() {
     for (var i = from; i < to; i++) { array[i] = value; }
     return array;
   }
-})();
+
+  // Export as AMD...
+  if (typeof define === 'function' && define.amd) {
+    define(function () { return LiquidMetal; });
+  }
+
+  // ...or as a node module
+  else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = LiquidMetal;
+  }
+
+  else {
+    global.LiquidMetal = LiquidMetal;
+  }
+})(typeof window !== 'undefined' ? window : this);
