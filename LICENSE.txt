@@ -1,4 +1,4 @@
-Copyright (c) 2009-2014 Ryan McGeary
+Copyright (c) 2009-2017 Ryan McGeary
 
 MIT License
 
