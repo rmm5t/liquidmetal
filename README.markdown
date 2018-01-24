@@ -1,7 +1,7 @@
 # LiquidMetal
 
-A mimetic poly-alloy of the Quicksilver scoring algorithm, essentially
-LiquidMetal. `</Schwarzenegger Voice>`
+[A mimetic poly-alloy](https://youtu.be/Fa4Jq7gJvZ0) of the Quicksilver
+scoring algorithm, essentially LiquidMetal. `</Schwarzenegger Voice>`
 
 Flex matching short abbreviations against longer strings is a boon in
 productivity for typists.  Applications like
